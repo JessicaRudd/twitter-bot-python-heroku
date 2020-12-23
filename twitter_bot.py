@@ -60,20 +60,20 @@ def create_tweet():
     return tweet
 
 def tweet_quote():
-    interval = 60 * 60 * 12 # tweet every 12 hours
+    #interval = 60 * 60 * 12 # tweet every 12 hours
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
 
-    # tweet = create_tweet()
-    # api.update_status(tweet)
+    tweet = create_tweet()
+    api.update_status(tweet)
 
-    while True:
-        print('getting a random quote...')        
-        tweet = create_tweet()
-        api.update_status(tweet)
-        time.sleep(interval) 
+    #while True:
+     #   print('getting a random quote...')        
+      #  tweet = create_tweet()
+       # api.update_status(tweet)
+        #time.sleep(interval) 
     
 if __name__ == "__main__":
     tweet_quote()
