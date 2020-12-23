@@ -15,8 +15,6 @@ from os import environ
 import gc
 
 
-# In[6]:
-
 
 consumer_key = environ['CONSUMER_KEY']
 consumer_secret_key = environ['CONSUMER_SECRET']
@@ -24,8 +22,6 @@ access_token = environ['ACCESS_KEY']
 access_token_secret = environ['ACCESS_SECRET']
 FORECAST_APIKEY = environ['FORECAST_APIKEY']
 
-
-# In[44]:
 
 
 def get_quotes():
@@ -70,24 +66,21 @@ def create_tweet():
     return tweet
  
 def tweet_quote():
+    interval = 60 * 60 * 24
+    
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
-    tweet = create_tweet()
-    status = api.update_status(tweet)
-    print(status.id)
+    
+    while True:
+        print('getting a random quote...')        
+        tweet = create_tweet()
+        api.update_status(tweet)
+        time.sleep(interval)
     
 if __name__ == "__main__":
     tweet_quote()
 
-#tweet_quote()
-# def send_quote():
-#      tweet = create_tweet()
-#      status = api.update_status(tweet)
-#      print(status.id)
-
-
-# In[ ]:
 
 
 
