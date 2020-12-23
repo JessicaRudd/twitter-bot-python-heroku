@@ -1,16 +1,16 @@
-# Twitter Bot Using Python and AWS Lambda
+# Twitter Bot Using Python and Heroku
 
 ![Python](https://img.shields.io/badge/Python-v3.8.3-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/_dylancastillo.svg?style=social&label=Follow%20%40_dylancastillo)](https://twitter.com/_dylancastillo)
 
 *This repository was pulled as a template from Dylan Castillo: https://github.com/dylanjcastillo/twitter-bot-python-aws-lambda to start my own Twitter bot project
 
-This is a simple template you can use to build a twitter bot using Python and an AWS Lambda Function. I used it to create [@dereksiversbot](https://twitter.com/dereksiversbot). Learn how to make your own [here.](https://dylancastillo.co/how-to-make-a-twitter-bot-for-free/)
+This is a simple template you can use to build a twitter bot using Python and Heroku. I used it to create [@RResurgens](https://twitter.com/RResurgens). Learn how to make your own [here.](https://dylancastillo.co/how-to-make-a-twitter-bot-for-free/)
  
 Why build a bot this way?
  
  1. It's quick and easy 
  2. You have full control over the bot's actions
- 3. It only uses services from AWS free tier (but see [limitations](#limitations) first)
+ 3. 
  
 ## Pre-requisites
 
@@ -18,9 +18,7 @@ To build and use the bot, you'll need to:
  
  1. Register for a [twitter developer account](https://developer.twitter.com/en)  
  2. Create a [twitter app](https://developer.twitter.com/en/portal/projects-and-apps). Make sure to give it **Read and Write** permissions.
- 3. Set up an [AWS account](https://aws.amazon.com/)
- 4. Create a [Lambda Function](https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html) for your bot
- 5. Create a [Lambda Layer](https://medium.com/@adhorn/getting-started-with-aws-lambda-layers-for-python-6e10b1f9a5d) to use additional libraries in your Lambda Function 
+ 3. Set up an [Heroku account](https://www.heroku.com/)
  
 ## How to use
 
@@ -36,7 +34,7 @@ ACCESS_TOKEN_SECRET=<YOUR_ACCESS_TOKEN_SECRET_HERE>
 CONSUMER_KEY=<YOUR_CONSUMER_KEY_HERE>
 CONSUMER_SECRET=<YOUR_CONSUMER_SECRET_HERE>
 ```
-5. Make changes in the logic of the bot by modyifing `src/lambda_function.py`
+5. Make changes in the logic of the bot by modyifing `src/twitter_bot.py`
 6. Test your changes locally by running `python entrypoint.py` from the root directory of your project
 
 ## How to deploy
@@ -55,9 +53,9 @@ Once you are happy with your bot:
 
 Read this before using the bot:
 
-- This is free unless you go crazy with it or use **custom events for triggering** the Lambda Function. Check the [AWS Free Tier](https://aws.amazon.com/free/) if you have any questions. Use it at your own risk!
-- Current logic is very simple. The bot will post a random tweet (excluding its last 3 tweets). If you want something more complex, you'll need to add it on your own.
+
 
 ## Attributions
 
-The `createlambdalayer.sh` script comes from [this repository](https://github.com/aws-samples/aws-lambda-layer-create-script).
+*This repository was pulled as a template from Dylan Castillo: https://github.com/dylanjcastillo/twitter-bot-python-aws-lambda to start my own Twitter bot project
+
