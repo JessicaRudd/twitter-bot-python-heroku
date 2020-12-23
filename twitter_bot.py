@@ -55,7 +55,7 @@ def create_tweet():
     tweet = "Rise Up ATL Runners! It's currently " + temperature + degree_sign + "F and " + str(description) +". Time for a run!" + create_quote()+"\n #morningmotivation #running #atlanta #atlantatrackclub"
 
     if len(tweet) > 280:
-        tweet = "Rise Up ATL Runners! It's currently " + temperature + degree_sign + "F and " + str(description)+". Time for a run! \n #morningmotivation #running #atlanta #atlantatrackclub""
+        tweet = "Rise Up ATL Runners! It's currently " + temperature + degree_sign + "F and " + str(description)+". Time for a run! \n #morningmotivation #running #atlanta #atlantatrackclub"
     
     return tweet
 
