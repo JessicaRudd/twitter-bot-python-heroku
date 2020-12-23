@@ -2,10 +2,6 @@
 
 ![Python](https://img.shields.io/badge/Python-v3.8.3-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat) [![Twitter](https://img.shields.io/twitter/follow/funsizeathlete.svg?style=social&label=@funsizeathlete)](https://twitter.com/funsizeathlete)
 
-
-
-*This repository was pulled as a template from Dylan Castillo: https://github.com/dylanjcastillo/twitter-bot-python-aws-lambda to start my own Twitter bot project
-
 This is a simple template you can use to build a twitter bot using Python and Heroku. I used it to create [@RResurgens](https://twitter.com/RResurgens). Learn how to make your own [here.](https://dylancastillo.co/how-to-make-a-twitter-bot-for-free/)
  
 Why build a bot this way?
