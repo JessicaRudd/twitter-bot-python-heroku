@@ -16,11 +16,17 @@ import gc
 
 
 
-consumer_key = environ['CONSUMER_KEY']
-consumer_secret_key = environ['CONSUMER_SECRET']
-access_token = environ['ACCESS_KEY']
-access_token_secret = environ['ACCESS_SECRET']
-FORECAST_APIKEY = environ['FORECAST_APIKEY']
+# consumer_key = environ['CONSUMER_KEY']
+# consumer_secret_key = environ['CONSUMER_SECRET']
+# access_token = environ['ACCESS_KEY']
+# access_token_secret = environ['ACCESS_SECRET']
+# FORECAST_APIKEY = environ['FORECAST_APIKEY']
+
+consumer_key = credentials.API_KEY
+consumer_secret_key = credentials.API_SECRET_KEY
+access_token = credentials.ACCESS_TOKEN
+access_token_secret = credentials.ACCESS_TOKEN_SECRET
+FORECAST_APIKEY = credentials.FORECAST_APIKEY
 
 
 
@@ -66,17 +72,12 @@ def create_tweet():
     return tweet
  
 def tweet_quote():
-    interval = 60 * 60 * 24
-    
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
-    
-    while True:
-        print('getting a random quote...')        
-        tweet = create_tweet()
-        api.update_status(tweet)
-        time.sleep(interval)
+    tweet = create_tweet()
+    status = api.update_status(tweet)
+    print(status.id)
     
 if __name__ == "__main__":
     tweet_quote()
