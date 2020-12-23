@@ -1,6 +1,6 @@
 # Twitter Bot Using Python and Heroku
 
-![Python](https://img.shields.io/badge/Python-v3.8.3-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat) [![Twitter](https://img.shields.io/twitter/follow/@funsizeathlete.svg?style=social&label=@:funsizeathlete)](https://twitter.com/:@funsizeathlete)
+![Python](https://img.shields.io/badge/Python-v3.8.3-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat) [![Twitter](https://img.shields.io/twitter/follow/funsizeathlete.svg?style=social&label=@:funsizeathlete)](https://twitter.com/:funsizeathlete)
 
 
 
