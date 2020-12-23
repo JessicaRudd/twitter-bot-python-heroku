@@ -18,11 +18,11 @@ import gc
 # In[6]:
 
 
-consumer_key = credentials.API_KEY
-consumer_secret_key = credentials.API_SECRET_KEY
-access_token = credentials.ACCESS_TOKEN
-access_token_secret = credentials.ACCESS_TOKEN_SECRET
-FORECAST_APIKEY = credentials.FORECAST_APIKEY
+consumer_key = environ['CONSUMER_KEY']
+consumer_secret_key = environ['CONSUMER_SECRET']
+access_token = environ['ACCESS_KEY']
+access_token_secret = environ['ACCESS_SECRET']
+FORECAST_APIKEY = environ['FORECAST_APIKEY']
 
 
 # In[44]:
