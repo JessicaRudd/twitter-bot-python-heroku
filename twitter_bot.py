@@ -8,6 +8,7 @@ import tweepy
 import credentials
 import urllib.request
 from os import environ
+import gc
 
 
 consumer_key = environ['CONSUMER_KEY']
