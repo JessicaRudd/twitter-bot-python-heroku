@@ -10,11 +10,16 @@ import urllib.request
 from os import environ
 import gc
 
+# CONSUMER_KEY = credentials.CONSUMER_KEY
+# CONSUMER_SECRET = credentials.CONSUMER_SECRET
+# ACCESS_KEY = credentials.ACCESS_KEY
+# ACCESS_SECRET = credentials.ACCESS_KEY_SECRET
+# FORECAST_APIKEY = credentials.FORECAST_APIKEY
 
-consumer_key = environ['CONSUMER_KEY']
-consumer_secret_key = environ['CONSUMER_SECRET']
-access_token = environ['ACCESS_KEY']
-access_token_secret = environ['ACCESS_SECRET']
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
 FORECAST_APIKEY = environ['FORECAST_APIKEY']
 
 
@@ -62,8 +67,8 @@ def create_tweet():
 def tweet_quote():
     #interval = 60 * 60 * 12 # tweet every 12 hours
 
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
-    auth.set_access_token(access_token, access_token_secret)
+    auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+    auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
     api = tweepy.API(auth)
 
     tweet = create_tweet()
