@@ -25,7 +25,10 @@ To make your own bot follow these steps:
 1. Clone this repository on your local machine
 2. Create a virtual environment in your project's root directory: `python3 -m venv environment && source environment/bin/activate`
 3. Install the required libraries using pip: `pip install -r requirements.txt`
-4. Create a file called `credentials.py` in the root directory of your project. Put your twitter App keys there (and any other keys required for scraping data if needed). * THIS IS JUST FOR TESTING. Once everything is tested and ready to deploy, you'll move these to environment variables:
+4. Create a file called `credentials.py` in the root directory of your project. Put your twitter App keys there (and any other keys required for scraping data if needed). 
+    * MAKE SURE TO INCLUDE 'import credentials' import statement in twitter_bot.py
+    * THIS IS JUST FOR TESTING. Once everything is tested and ready to deploy, you'll move these to environment variables.
+    * ADD THIS FILE TO THE .gitignore so you're not putting your api keys publicly on github!
 ```
 ACCESS_TOKEN=<YOUR_ACCESS_TOKEN_HERE>
 ACCESS_TOKEN_SECRET=<YOUR_ACCESS_TOKEN_SECRET_HERE>
