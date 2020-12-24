@@ -56,10 +56,15 @@ Read this before using the bot:
 ## References
 
 *This repository was started as a template from Dylan Castillo: https://github.com/dylanjcastillo/twitter-bot-python-aws-lambda to start my own Twitter bot project
+
 *Weather data is pulled from [OpenWeather](https://home.openweathermap.org/)
+
 *[How to Set up a Twitter Bot with Python and Heroku](https://dev.to/emcain/how-to-set-up-a-twitter-bot-with-python-and-heroku-1n39)
+
 *[How to Make a Twitter Bot in Python With Tweepy](https://realpython.com/twitter-bot-python-tweepy/#deploying-bots-to-a-server-using-docker)
+
 *[Build and Deploy Twitter Bots with Python, Tweepy and PythonAnywhere](https://www.twilio.com/blog/build-deploy-twitter-bots-python-tweepy-pythonanywhere)
+
 *[Making a Quote Tweeting Twitter Bot with Python, Tweepy, and Heroku.](https://medium.com/datadriveninvestor/making-a-quote-tweeting-twitter-bot-with-python-tweepy-and-heroku-69a11cd3f47e)
 
 
