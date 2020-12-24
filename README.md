@@ -14,9 +14,11 @@ Why build a bot this way?
 
 To build and use the bot, you'll need to:
  
- 1. Register for a [twitter developer account](https://developer.twitter.com/en)  
- 2. Create a [twitter app](https://developer.twitter.com/en/portal/projects-and-apps). Make sure to give it **Read and Write** permissions.
- 3. Set up a [Heroku account](https://www.heroku.com/)
+ 1. Create a new Twitter accoun to act as the bot
+ 2. Register for a [twitter developer account](https://developer.twitter.com/en)  
+ 3. Create a [twitter app](https://developer.twitter.com/en/portal/projects-and-apps). Make sure to give it **Read and Write** permissions.
+ 4. Set up a [Heroku account](https://www.heroku.com/)
+ 5. Intialize git repository in project folder, since Heroku pulls entire projects directly from the working directory of your repository. 
  
 ## How to use
 
@@ -43,18 +45,54 @@ CONSUMER_SECRET=<YOUR_CONSUMER_SECRET_HERE>
 Once you are happy with your bot:
 
 1. Add any additional packages you used to `requirements.txt`
-2. Run `sh createlambdalayer.sh` from the root directory of your project. It'll generate a zip file with your libraries called `layer.zip`
-3. Update your Lambda Layer using `layer.zip`
-4. Run `sh buildpackage.sh` from the root directory of your project. It'll make a zip file with the code for your Lambda Function called `lambda_function.zip`
-5. Upload `lambda_function.zip` to your Lambda Function
-6. Add your twitter App keys as environment variables in the Lambda Function
-7. Add a scheduled trigger to your Lambda Function using [EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/run-lambda-schedule.html) 
+2. Set up [Heroku account](https://signup.heroku.com/) and install Heroku [command line interface](https://devcenter.heroku.com/articles/heroku-cli)
+3. Create a basic web server script
+```
+from os import environ
+from flask import Flask
+app = Flask(__name__)
+app.run(host= '0.0.0.0', port=environ.get('PORT'))
+```
+4. Set up a Procfile to tell Heroku what to do with the script and server
+```
+web: python server.py
+worker: python twitter_bot.py
+```
+5. Update twitter_bot.py so that Heroku can find your API credentials. Make sure to include these imports:
+```
+import sys
+from os import environ
+```
+... and update where app retrieves credentials (instead of retrieving from credentials.py file they'll now be served as environment variables from within Heroku dashboard...
+```
+consumer_key = environ['API_KEY']
+consumer_secret_key = environ['API_SECRET_KEY']
+access_token = environ['ACCESS_TOKEN']
+access_token_secret = environ['ACCESS_TOKEN_SECRET']
+```
+6. Commit and push updated files to local main branch of git repository
+7. In command line, in project folder, login to Heroku
+```
+Heroku login
+```
+8. Create app in Heroku from within CLI
+```
+heroku create [app-name]
+```
+9. Push local git repository to deploy app
+```
+git push heroku main
+```
+10. Check Twitter to see if a tweet was sent! You can use Heroku dashboard to check logs, troubleshoot, and add additional functionality like scheduling. HAVE FUN!
 
 ## Limitations
 
 Read this before using the bot:
 
+## Future Work
 
+1. Refactoring into python package
+2. Deploy using Docker and AWS
 
 ## References
 
