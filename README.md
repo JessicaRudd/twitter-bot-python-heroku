@@ -36,7 +36,7 @@ CONSUMER_KEY=<YOUR_CONSUMER_KEY_HERE>
 CONSUMER_SECRET=<YOUR_CONSUMER_SECRET_HERE>
 ```
 5. Make changes in the logic of the bot by modyifing `twitter_bot.py`
-6. Test your changes locally by running `python entrypoint.py` from the root directory of your project
+6. Test your changes locally by running `python twitter_bot.py` from the root directory of your project
 
 ## How to deploy
 
