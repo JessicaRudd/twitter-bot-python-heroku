@@ -23,7 +23,7 @@ To build and use the bot, you'll need to:
 To make your own bot follow these steps:
 
 1. Clone this repository on your local machine
-2. Create a virtual environment in your project's root directory: `python3 -m venv venv && source venv/bin/activate`
+2. Create a virtual environment in your project's root directory: `python3 -m venv environment && source environment/bin/activate`
 3. Install the required libraries using pip: `pip install -r requirements.txt`
 4. Create a file called `credentials.py` in the root directory of your project. Put your twitter App keys there (and any other keys required for scraping data if needed). * THIS IS JUST FOR TESTING. Once everything is tested and ready to deploy, you'll move these to environment variables:
 ```
