@@ -79,11 +79,12 @@ Heroku login
 ```
 heroku create [app-name]
 ```
-9. Push local git repository to deploy app
+9. Set [environmental variables in Heroku dashboard](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard)
+10. Push local git repository to deploy app
 ```
 git push heroku main
 ```
-10. Check Twitter to see if a tweet was sent! You can use Heroku dashboard to check logs, troubleshoot, and add additional functionality like scheduling. HAVE FUN!
+11. Check Twitter to see if a tweet was sent! You can use Heroku dashboard to check logs, troubleshoot, and add additional functionality like scheduling. HAVE FUN!
 
 ## Limitations
 
