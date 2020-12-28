@@ -7,8 +7,7 @@ import sys
 import tweepy
 import credentials
 import urllib.request
-#from os import environ
-from config import create_api
+from os import environ
 import gc
 
 # CONSUMER_KEY = credentials.CONSUMER_KEY
@@ -17,11 +16,11 @@ import gc
 # ACCESS_SECRET = credentials.ACCESS_KEY_SECRET
 # FORECAST_APIKEY = credentials.FORECAST_APIKEY
 
-# CONSUMER_KEY = environ['CONSUMER_KEY']
-# CONSUMER_SECRET = environ['CONSUMER_SECRET']
-# ACCESS_KEY = environ['ACCESS_KEY']
-# ACCESS_SECRET = environ['ACCESS_SECRET']
-# FORECAST_APIKEY = environ['FORECAST_APIKEY']
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
+FORECAST_APIKEY = environ['FORECAST_APIKEY']
 
 
 def get_quotes():
@@ -43,7 +42,6 @@ def create_quote():
     return quote
 
 def get_weather():
-    FORECAST_APIKEY = environ["FORECAST_APIKEY"]
     req = urllib.request.Request(url=f'https://api.openweathermap.org/data/2.5/weather?q=Atlanta&units=imperial&appid='+FORECAST_APIKEY)
 
     with urllib.request.urlopen(req) as resp:
@@ -51,7 +49,7 @@ def get_weather():
         gc.collect()
     return data
 
-def create_tweet(api):
+def create_tweet():
         
     data=get_weather()
     temperature = str(int(round(data['main']['temp'])))
@@ -67,14 +65,13 @@ def create_tweet(api):
     return tweet
 
 def tweet_quote():
-    logger.info("Posting tweet")
     #interval = 60 * 60 * 12 # tweet every 12 hours
 
-#     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-#     auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
-#     api = tweepy.API(auth)
+    auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+    auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+    api = tweepy.API(auth)
 
-    tweet = create_tweet(api)
+    tweet = create_tweet()
     api.update_status(tweet)
 
     #while True:
@@ -82,11 +79,6 @@ def tweet_quote():
       #  tweet = create_tweet()
        # api.update_status(tweet)
         #time.sleep(interval) 
-        
-def main():
-    #interval = 60 * 60 * 12 # tweet every 12 hours
-    api=create_api()
-    tweet_quote(api)
     
 if __name__ == "__main__":
     tweet_quote()
