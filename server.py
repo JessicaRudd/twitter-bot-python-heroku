@@ -1,6 +1,6 @@
 from os import environ
 from flask import Flask
-import src.twitter_bot as twitter_bot
+import twitter_bot
 
 app = Flask(__name__)
 
