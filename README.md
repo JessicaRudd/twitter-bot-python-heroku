@@ -97,7 +97,7 @@ Read this before using the bot:
 
 ## References
 
-*This repository was started as a template from Dylan Castillo: https://github.com/dylanjcastillo/twitter-bot-python-aws-lambda to start my own Twitter bot project
+*I started this project using this repository as a template from Dylan Castillo: https://github.com/dylanjcastillo/twitter-bot-python-aws-lambda before deciding to switch to the Heroku build based on tasks I needed to learn for work.
 
 *Weather data is pulled from [OpenWeather](https://home.openweathermap.org/)
 
